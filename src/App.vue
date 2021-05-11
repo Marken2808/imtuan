@@ -2,29 +2,35 @@
 
   <div id="app">
     <b-container fluid id="page0">
-        <b-avatar :src="require('@/assets/Messi_avt.jpg')" size="300" class="mt-5"></b-avatar>
-        <h1 class="mt-5">TUAN NGUYEN</h1>
+        <b-avatar :src="require('@/assets/Messi_avt.jpg')" size="200"></b-avatar>
+        <h1 class="mt-3">TUAN NGUYEN</h1>
         <h3>Software Developer</h3>
     </b-container>
     
-
+    
     <b-container fluid id="page1">
-      <p>1</p>
+      <p>page1</p>
     </b-container>
 
     <b-container fluid id="page2">
-      <p>2</p>
+      <p>page2</p>
     </b-container>
 
   </div>
 </template>
 
 <script>
+// import Avatar from '@/assets/Messi_avt.jpg';
 
 export default {
   name: 'App',
   components: {
-  }
+  },
+  // data: function() {
+  //   return {
+  //     image: Avatar,
+  //   }
+  // }
 }
 </script>
 
@@ -41,10 +47,15 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  
 }
 
 #page0 {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #page1 {
