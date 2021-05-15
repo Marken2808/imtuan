@@ -6,14 +6,14 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'Resume',
-    component: () => import('../views/ResumePage.vue')
+    name: 'Porfolio',
+    component: () => import('../views/PorfolioPage.vue')
   },
   {
-    path: '/Skill',
-    name: 'Skill',
-    component: () => import('../views/SkillPage.vue')
-  }
+    path: '/Blog',
+    name: 'Blog',
+    component: () => import('../views/BlogPage.vue')
+  },
 ]
 
 const router = new VueRouter({
