@@ -5,41 +5,38 @@
 <!-- NAVBAR -->
     <b-navbar v-b-scrollspy toggleable="md" type="light" id="navbar" class="nav nav-pills fixed-top">
       
-      <b-navbar-brand href="#">
+      <b-navbar-brand href="/">
         <img src="https://placekitten.com/g/30/30" alt="Kitten">
       </b-navbar-brand>
 
       <b-navbar-toggle target="navbar-toggle-collapse">
         <template #default="{ expanded }">
-        <b-icon v-if="expanded" icon="chevron-bar-up"></b-icon>
-        <b-icon v-else icon="chevron-bar-down"></b-icon>
-      </template>
+          <b-icon v-if="expanded" icon="chevron-bar-up"></b-icon>
+          <b-icon v-else icon="chevron-bar-down"></b-icon>
+        </template>
       </b-navbar-toggle>
 
       <b-collapse id="navbar-toggle-collapse" class="justify-content-center" is-nav>
         <b-navbar-nav>
-          <b-nav-item href="#scroll0">Home</b-nav-item>
-          <b-nav-item href="#scroll1">Page 1</b-nav-item>
-          <b-nav-item href="#scroll2">Page 2</b-nav-item>
-          <b-nav-item href="#scroll3">Page 3</b-nav-item>
+          <b-nav-item href="#Resume">Resume</b-nav-item>
+          <b-nav-item href="#Skill">Skill</b-nav-item>
+          <b-nav-item href="#Project">Project</b-nav-item>
+          <b-nav-item href="#Education">Education</b-nav-item>
+          <b-nav-item href="#Experience">Experience</b-nav-item>
+          <b-nav-item href="#Contact">Contact</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
 
     </b-navbar>
 
     <div data-bs-target="#navbar">
-    
-<!-- PAGE 0 -->
-      <div id="scroll0" class="full-height">
-        <b-avatar :src="require('@/assets/emiu.png')" size="200" class="avt"></b-avatar>
-        <h1 class="mt-3">TUAN NGUYEN</h1>
-        <h3>Software Developer</h3>
-      </div>
-      <hr class="m-0"/>
+      
+      <ResumePage/>
 
-<!-- PAGE 1 -->
-      <div id="scroll1" class="full-height px-4">
-        <p>page1</p>
+
+<!-- Skill -->
+      <div id="Skill" class="full-height px-4">
+        <p>Skill</p>
 
         <b-container fluid class="bv-example-row justify-content-center">
 
@@ -102,9 +99,9 @@
       </div>
       <hr class="m-0"/>
 
-<!-- PAGE 2 -->
-      <div id="scroll2" class="full-height">
-        <p>page2</p>
+<!-- Project -->
+      <div id="Project" class="full-height">
+        <p>Project</p>
         <b-container>
           <b-row class="justify-content-center" cols="1" cols-sm="2" cols-md="3" cols-lg="3">
             
@@ -163,10 +160,23 @@
       </div>
       <hr class="m-0"/>
       
-<!-- FOOTER -->
-      <div id="scroll3">
-        <p>Footer</p>
+<!-- Education -->
+      <div id="Education" class="full-height">
+        <p>Education</p>
       </div>   
+      <hr class="m-0"/>
+
+<!-- Experience -->
+      <div id="Experience" class="full-height">
+        <p>Experience</p>
+      </div>   
+      <hr class="m-0"/>
+
+<!-- Contact -->
+      <div id="Contact" class="full-height">
+        <p>Contact</p>
+      </div>   
+      <hr class="m-0"/>
 
     </div>
   </div>
