@@ -1,8 +1,11 @@
 <template>
+  <div id="app">
+    <div id="nav">
+      <router-link to="/">Resume</router-link> |
+      <router-link to="/Skill">Skill</router-link>
+    </div>
 
-  <div id="app" class="m-0 p-0">
-
-<!-- NAVBAR -->
+    <!-- NAVBAR -->
     <b-navbar v-b-scrollspy toggleable="md" type="light" id="navbar" class="nav nav-pills fixed-top">
       
       <b-navbar-brand href="/">
@@ -179,65 +182,30 @@
       <hr class="m-0"/>
 
     </div>
+    
+    <router-view/>
   </div>
 </template>
 
-<script>
-
-export default {
-  name: 'App',
-  components: {
-  },
-  data() {
-      return {
-        isHovered: false
-      }
-    },
-    methods: {
-      handleHover(hovered) {
-        this.isHovered = hovered
-      }
-    }
-}
-</script>
-
 <style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
 
-  html, body {
-    background-image: linear-gradient(to right, #cee8fd , #ece6ff);
-    /* background-image: linear-gradient(to right, #86C6F9 , #CAB7FF); */   /* heavy */
-    /* background-image: linear-gradient(to right, #cee8fd , #ece6ff); */   /* light */
-  }
+#nav {
+  padding: 30px;
+}
 
-  .full-height {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
 
-  .avt {
-    background-image: -webkit-linear-gradient(left, #CAB7FF, #86C6F9);
-    padding: 5px;
-  }
-
-  .nav {
-    backdrop-filter: blur(15px);
-    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
-  }
-
-  .nav-pills .nav-link.active, .nav-pills .show > .nav-link{
-    background-color:  #6cbdff !important;
-  }
-
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-/* test */
-
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
 </style>
