@@ -5,7 +5,6 @@
     <NavBar/>
 
     <div data-bs-target="#navbar">
-
       <ResumePage/>
       <SkillPage/>
       <ProjectPage/>
@@ -39,7 +38,7 @@ export default {
     EducationPage,
     ExperiencePage,
     ContactPage,
-  }
+  },
 }
 </script>
 

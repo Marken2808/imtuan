@@ -30,9 +30,6 @@
 
         </b-container>
 
-        
-
-        
       </div>
       <hr class="m-0"/>
     </div>
