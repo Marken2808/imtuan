@@ -2,7 +2,7 @@
   <div>
 
 <!-- Project -->
-      <div id="Project" class="full-height">
+      <div id="Project" class="full-height my-4">
         <p>Project</p>
 
 <!-- test hover -->

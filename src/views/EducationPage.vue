@@ -2,58 +2,32 @@
   <div>
 
 <!-- Education -->
+
       <div id="Education" class="full-height">
         <p>Education</p>
 
-        <b-container fluid>
+        <b-container fluid class="bv-example-row">
           <b-row class="justify-content-center align-items-center" cols="2" >
-            <b-col cols="2" >
-              <b-button-group vertical v-b-scrollspy:testButton id="buttonGroup" class="justify-content-center align-items-center" >
-                
-                <b-button pill v-for="(btn, idx) in buttons" :key="idx" :pressed.sync="btn.state" variant="white" :href="btn.href">
+            <b-col cols="3" md="2" >
+              <b-button-group vertical v-b-scrollspy id="buttonGroup" class="justify-content-center align-items-center" >
+                <b-button pill v-for="(edu, idx) in edus" :key="idx" :pressed.sync="edu.isPressed" :href="'#'+edu.id" variant="faded" class="my-5">
                   <b-icon icon="circle" />
+                  <p>{{edu.year}}</p>
                 </b-button>
-                <hr>
-
-
-                <!-- <b-button pill href="#list-item-2">
-                  <b-icon icon="circle" />
-                </b-button>
-                <hr>
-
-
-                <b-button pill href="#list-item-3">
-                  <b-icon icon="circle" />
-                </b-button>
-                <hr>
-
-
-                <b-button pill href="#list-item-4">
-                  <b-icon icon="circle" />
-                </b-button>
-                <hr>
-
-
-                <b-button pill href="#list-item-5">
-                  <b-icon icon="circle" />
-                </b-button>
-                <hr> -->
-
               </b-button-group>
+
             </b-col>
 
-            <b-col cols="7" md="8" lg="9">
-              <div id="testButton" data-bs-target="#buttonGroup" style="position:relative; overflow-y:auto; height:500px">
+            <b-col cols="8" md="9">
+              <div data-bs-target="#buttonGroup" v-for="(edu, idx) in edus" :key="idx">
               <!-- <div id="listgroup-ex" style="position:relative; overflow-y:auto; height:500px"> -->
-                <h4 id="list-item-1">Item 1</h4>
-                <p>{{ text }}</p>
-                <h4 id="list-item-2">Item 2</h4>
-                <p>{{ text }}</p>
-                <h4 id="list-item-3">Item 3</h4>
-                <p>{{ text }}</p>
-                <h4 id="list-item-4">Item 4</h4>
-                <p>{{ text }}</p>
-                <h4 id="list-item-5">Item 5</h4>
+                <div :id="edu.id">
+                  <h4>{{edu.uni}}</h4>
+                  <blockquote class="blockquote">
+                  <footer class="blockquote-footer">{{edu.archieve}}</footer>
+                  </blockquote>
+                </div>
+                
                 <p>{{ text }}</p>
               </div>
             </b-col>
@@ -62,7 +36,7 @@
       </div>   
 
       
-      <hr class="m-0"/>
+      <hr class="m-0 "/>
 
   </div>
 </template>
@@ -73,12 +47,16 @@ export default {
   name: 'EducationPage',
   data() {
     return {
-      buttons:[
-        {href: "#list-item-1", state: false},
-        {href: "#list-item-2", state: false},
-        {href: "#list-item-3", state: false},
-        {href: "#list-item-4", state: false},
-        {href: "#list-item-5", state: false},
+      edus:[
+        {id: "IU", isPressed: false, year: "2016 - 2018", archieve: "1:1 (First Class)", 
+          uni: "International University (IU-VNU)",
+
+        },
+
+        {id: "UWE", isPressed: false,  year: "2018 - 2021 (present)", archieve: "1:1 (Expected)",
+          uni: "University of the West of England (UWE)"
+        },
+        
       ],
       text: `
         Quis magna Lorem anim amet ipsum do mollit sit cillum voluptate ex nulla
@@ -100,3 +78,7 @@ export default {
   
 }
 </script>
+
+<style scoped>
+
+</style>

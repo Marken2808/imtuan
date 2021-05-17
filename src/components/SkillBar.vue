@@ -5,7 +5,7 @@
             <b-col col md="3" lg="2" v-b-popover.hover.right :title="title">
             
               <b-avatar                 rounded :src="imgURL1" size="45"></b-avatar>
-              <b-avatar v-if="imgURL2"  rounded :src="imgURL2" size="45"></b-avatar>
+              <b-avatar v-if="imgURL2"  rounded :src="imgURL2" size="45" class="ml-2"></b-avatar>
 
             </b-col>
             <b-col col md="8" lg="8">
