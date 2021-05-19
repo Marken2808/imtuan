@@ -4,35 +4,47 @@
 <!-- Education -->
 
       <div id="Education" class="full-height">
-        <p>Education</p>
 
-        <b-container fluid class="bv-example-row">
-          <b-row class="justify-content-center align-items-center" cols="2" >
-            <b-col cols="3" md="2" >
-              <b-button-group vertical v-b-scrollspy id="buttonGroup" class="justify-content-center align-items-center" >
-                <b-button pill v-for="(edu, idx) in edus" :key="idx" :pressed.sync="edu.isPressed" :href="'#'+edu.id" variant="faded" class="my-5">
-                  <b-icon icon="circle" />
-                  <p>{{edu.year}}</p>
-                </b-button>
-              </b-button-group>
+        <b-container fluid>
+          <b-card v-for="(edu, idx) in edus" :key="idx" header-tag="header" class="my-3">
 
-            </b-col>
+          <template #header>
+            <h5 >{{edu.uni}}</h5>
+            <blockquote class="mb-0 blockquote">
+              <footer class="blockquote-footer">{{edu.archieve}}</footer>
+            </blockquote>
+          </template>
 
-            <b-col cols="8" md="9">
-              <div data-bs-target="#buttonGroup" v-for="(edu, idx) in edus" :key="idx">
-              <!-- <div id="listgroup-ex" style="position:relative; overflow-y:auto; height:500px"> -->
-                <div :id="edu.id">
-                  <h4>{{edu.uni}}</h4>
-                  <blockquote class="blockquote">
-                  <footer class="blockquote-footer">{{edu.archieve}}</footer>
-                  </blockquote>
-                </div>
-                
-                <p>{{ text }}</p>
-              </div>
-            </b-col>
+          <b-row cols="1" class="align-items-center">
+            <b-col md="2">{{edu.year}}</b-col>
+
+            <b-col md="10">
+              
+
+              <b-card no-body  v-for="(sub, idx) in edu.subject" :key="idx" class="my-2 ">
+                <b-row cols="1" class="align-items-sm-center align-items-md-stretch">
+                  <b-col md="3" class="d-md-flex align-self-md-stretch">
+                    <b-card-header>
+                      {{sub.name}}
+                    </b-card-header>
+                  </b-col>
+
+                  <b-col md="9" class="text-break">
+                    <b-card-body>
+                      {{sub.des}}
+                    </b-card-body>
+                  </b-col>
+                </b-row>
+              </b-card>
+              
+              </b-col>
+
           </b-row>
+
+          </b-card>
+
         </b-container>
+        
       </div>   
 
       
@@ -43,31 +55,86 @@
 
 
 <script>
+
 export default {
   name: 'EducationPage',
   data() {
     return {
       edus:[
-        {id: "IU", isPressed: false, year: "2016 - 2018", archieve: "1:1 (First Class)", 
+        {
+          id: "UWE", year: "2018-2021 (present)", archieve: "1:1 (Expected)",
+          uni: "University of the West of England (UWE)",
+          subject: [
+            { 
+              name : "Mobile Applications",
+              des : "Learned IOS app by Swift following the MVC, MVVM design pattern of concepts of Object-Oriented Programming (OOP) and control and data structures."  
+            },
+            { 
+              name : "Cryptography",
+              des : "Developed application to cracking passwords using Brute Force base on SHA1 and BCH encoding by Java. Developed text encryption app using Pseudo-Random Number Generator, Stream Cipher and Steganography without specific libraries."
+            },
+            { 
+              name : "Enterprise Systems Development",
+              des : "Developed backend web for SmartCare Surgery by Java and Jsp/Servlet following the MVC design pattern with a local Java DB Relational database."
+            },
+            { 
+              name : "Object-Oriented Systems Development",
+              des : "Developed a stock inventory system by Java, implement UML diagrams. Developed a student accommodation by Java, implement GUI by Javafx."
+            },
+            { 
+              name : "Internet of Things",
+              des : "Created mini Tetris game on BBC micro:bit by C. Implement message bus and event handler. Implemented Morse code to communicate by Bluetooth."
+            },
+            { 
+              name : "Design and Analysis of Data Structures and Algorithms",
+              des : "Developed the Pediatric Intensive Care Unit program by Python. Read and write data to a CSV file, implemented search algorithm and data structure."
+            },
+            { 
+              name : "Computer and Network Systems",
+              des : "Created CPU emulator by C, developed a battleship bot against other students in the leaderboard which communicated with UWE main server."
+            },
+            { 
+              name : "Operating Systems",
+              des : "Worked with Ubuntu, understood processes and threads, CPU scheduling, file management and system call. Used Git to push repositories by command line."
+            },
+          ]
+        },
+        {
+          id: "IU", year: "2016-2018", archieve: "1:1 (Achieved)", 
           uni: "International University (IU-VNU)",
+          subject: [
+            { 
+              name : "Principle of Computing",
+              des : "Learned operation gate and floating point."  
+            },
+            { 
+              name : "C/C++ Programming in Unix",
+              des : "Learned basic C/C++ programming language, creating simple Snake game."
+            },
+            { 
+              name : "Digital Logic Design",
+              des : "Learned combinational, sequential logic circuits (flip-flops, counters, registers)."
+            },
+            { 
+              name : "Computer Architecture",
+              des : "Learned Assembly, ALU operation and MIPS Encoding applying to Arduino."
+            },
+          ]
 
         },
+      ],
 
-        {id: "UWE", isPressed: false,  year: "2018 - 2021 (present)", archieve: "1:1 (Expected)",
-          uni: "University of the West of England (UWE)"
+      fields: [
+        {
+          key: 'name',
+          sortable: true
+        },
+        {
+          key: 'des',
+          sortable: true,
         },
         
       ],
-      text: `
-        Quis magna Lorem anim amet ipsum do mollit sit cillum voluptate ex nulla
-        tempor. Laborum consequat non elit enim exercitation cillum aliqua
-        consequat id aliqua. Esse ex consectetur mollit voluptate est in duis
-        laboris ad sit ipsum anim Lorem. Incididunt veniam velit elit elit veniam
-        Lorem aliqua quis ullamco deserunt sit enim elit aliqua esse irure. Laborum
-        nisi sit est tempor laborum mollit labore officia laborum excepteur
-        commodo non commodo dolor excepteur commodo. Ipsum fugiat ex est consectetur
-        ipsum commodo tempor sunt in proident.
-      `
     }
   },
   computed: {
