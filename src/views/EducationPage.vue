@@ -3,33 +3,34 @@
 
 <!-- Education -->
 
-      <div id="Education" class="full-height">
+      <div id="Education" class="full-height my-4">
 
-        <b-container fluid>
-          <b-card v-for="(edu, idx) in edus" :key="idx" header-tag="header" class="my-3">
+        <b-container v-for="(edu, idx) in edus" :key="idx" fluid>
 
-          <template #header>
-            <h5 >{{edu.uni}}</h5>
-            <blockquote class="mb-0 blockquote">
-              <footer class="blockquote-footer">{{edu.archieve}}</footer>
-            </blockquote>
-          </template>
+          <b-button v-b-toggle="edu.id"  class="mt-5 w-100">
+            {{edu.year}}
+          </b-button>
 
-          <b-row cols="1" class="align-items-center">
-            <b-col md="2">{{edu.year}}</b-col>
+          <b-collapse visible :id="edu.id">
+            <b-card  header-tag="header" >
 
-            <b-col md="10">
-              
+              <template #header>
+                <h5 >{{edu.uni}}</h5>
+                <blockquote class="mb-0 blockquote">
+                  <footer class="blockquote-footer">{{edu.archieve}}</footer>
+                </blockquote>
+              </template>
 
-              <b-card no-body  v-for="(sub, idx) in edu.subject" :key="idx" class="my-2 ">
+              <b-card no-body  v-for="(sub, idx) in edu.subject" :key="idx" class="my-2">
                 <b-row cols="1" class="align-items-sm-center align-items-md-stretch">
+
                   <b-col md="3" class="d-md-flex align-self-md-stretch">
-                    <b-card-header>
+                    <b-card-header class="w-100" >
                       {{sub.name}}
                     </b-card-header>
                   </b-col>
 
-                  <b-col md="9" class="text-break">
+                  <b-col md="9" class="text-break" >
                     <b-card-body>
                       {{sub.des}}
                     </b-card-body>
@@ -37,11 +38,8 @@
                 </b-row>
               </b-card>
               
-              </b-col>
-
-          </b-row>
-
-          </b-card>
+            </b-card>
+          </b-collapse>
 
         </b-container>
         
@@ -62,7 +60,7 @@ export default {
     return {
       edus:[
         {
-          id: "UWE", year: "2018-2021 (present)", archieve: "1:1 (Expected)",
+          id: "UWE", year: "2018 - 2021 (Present)", archieve: "1:1 (Expected)",
           uni: "University of the West of England (UWE)",
           subject: [
             { 
@@ -100,7 +98,7 @@ export default {
           ]
         },
         {
-          id: "IU", year: "2016-2018", archieve: "1:1 (Achieved)", 
+          id: "IU", year: "2016 - 2018", archieve: "1:1 (Achieved)", 
           uni: "International University (IU-VNU)",
           subject: [
             { 
@@ -121,19 +119,7 @@ export default {
             },
           ]
 
-        },
-      ],
-
-      fields: [
-        {
-          key: 'name',
-          sortable: true
-        },
-        {
-          key: 'des',
-          sortable: true,
-        },
-        
+        },        
       ],
     }
   },

@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <b-col class="my-2">
+    <b-col class="my-3">
         <b-card :img-src="require('@/assets/'+cardImg+'')" img-top>
             <b-card-text>
                 {{ text }}
