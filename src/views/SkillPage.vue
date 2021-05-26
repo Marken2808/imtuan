@@ -2,10 +2,10 @@
     <div>
 
  <!-- Skill -->
-      <div id="Skill" class="full-height px-4">
+      <div id="Skill" class="full-height">
         <p>Skill</p>
 
-        <b-container fluid class="bv-example-row justify-content-center">
+        <b-container fluid class="justify-content-center">
 
           <SkillBar title="Java" value="75" 
             imgURL1="https://1000logos.net/wp-content/uploads/2020/09/Java-Emblem-1080x675.jpg"
@@ -43,6 +43,10 @@
           <SkillBar title="HTML / CSS" value="60" 
             imgURL1="https://lh3.googleusercontent.com/proxy/fNpn-93AJxt4j8fZyJCzkYwlN6ReK8Cm-j5OOEexstwmDPF_CeWB3EK5NYm4V5Z4YHwtJ5rZ3elmsl-u1yEewzxNrdwwnr9x3ukXOruDkOU0wrmK"
             imgURL2="https://cdn2.iconfinder.com/data/icons/social-icon-3/512/social_style_3_css3-512.png"
+          />
+
+          <SkillBar title="PHP" value="30" 
+            imgURL1="https://www.scottbrownconsulting.com/wp-content/uploads/2016/12/php7.png"
           />
 
         </b-container>

@@ -88,13 +88,13 @@ export default {
           ]
         },
         {
-          id: "4", year: "time",  location: "Fishponds, Bristol, England",
+          id: "4", year: "Jun 2019 - Aug 2019",  location: "Fishponds, Bristol, England",
           company: "The Best Connection (TBC)",
           jobs: [
             { 
-              title : "title",
+              title : "Warehouse Operative",
               type: "Contract temporary",
-              des : "Packing parcel"  
+              des : "Handling the full range of goods by DPD and its Marketplace sellers following DPD's internal processes and procedures and using radio frequency scanners. Relocating whole products after wrapping using forklifts, pump truck."  
             },
           ]
         },
