@@ -1,13 +1,13 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Portfolio from '../views/PorfolioPage.vue';
+import Portfolio from '../views/PortfolioPage.vue';
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Porfolio',
+    name: 'Portfolio',
     component: Portfolio,
   },
   {
